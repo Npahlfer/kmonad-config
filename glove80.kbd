@@ -1,13 +1,12 @@
-;; Maybe layer:
-;; (cmd-button "date >> /tmp/kmonad_example.txt")   ;; Append date to tmpfile
+;; (cmd-button "date >> /tmp/kmonad_example.txt")
 
 (defcfg
-  input  (device-file "/dev/input/by-id/usb-MoErgo_Glove80_Left_moergo.com:GLV80-32EF1ADDDAABDDA4-event-kbd")
-  output (uinput-sink "kmonad output")
-  cmp-seq ralt
-  cmp-seq-delay 20
-  fallthrough true
-  allow-cmd false
+	input  (device-file "/dev/input/by-id/usb-MoErgo_Glove80_Left_moergo.com:GLV80-32EF1ADDDAABDDA4-event-kbd")
+ 	output (uinput-sink "kmonad output")
+ 	cmp-seq ralt
+ 	cmp-seq-delay 20
+  	fallthrough true
+  	allow-cmd false
 )
 
 (defalias
@@ -22,9 +21,9 @@
 	mc    C-A-M-c 
 	mp    C-A-M-p
 
-  aa å  AA Å
-  ae ä  AE Ä
-  oe ö  OE Ö
+	aa å  AA Å
+  	ae ä  AE Ä
+  	oe ö  OE Ö
 )
 
 (defsrc
