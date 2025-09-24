@@ -1,6 +1,5 @@
 ;; Maybe layer:
 ;; (cmd-button "date >> /tmp/kmonad_example.txt")   ;; Append date to tmpfile
-;; output (uinput-sink "kmonad output" "/bin/sh -c 'sleep 1 && setxkbmap -option compose:ralt'")
 
 (defcfg
   input  (device-file "/dev/input/by-id/usb-MoErgo_Glove80_Left_moergo.com:GLV80-32EF1ADDDAABDDA4-event-kbd")
