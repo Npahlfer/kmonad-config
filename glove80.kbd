@@ -1,0 +1,96 @@
+;; Maybe layer:
+;; (cmd-button "date >> /tmp/kmonad_example.txt")   ;; Append date to tmpfile
+;; output (uinput-sink "kmonad output" "/bin/sh -c 'sleep 1 && setxkbmap -option compose:ralt'")
+
+(defcfg
+  input  (device-file "/dev/input/by-id/usb-MoErgo_Glove80_Left_moergo.com:GLV80-32EF1ADDDAABDDA4-event-kbd")
+  output (uinput-sink "kmonad output")
+  cmp-seq ralt
+  cmp-seq-delay 20
+  fallthrough true
+  allow-cmd false
+)
+
+(defalias
+	f10 (layer-toggle cam-layer)
+	me    C-A-M-e
+	mf    C-A-M-f
+	mw    C-A-M-w 
+	mspc  C-A-M-spc
+	ms    C-A-M-s
+	md    C-A-M-d
+	mn    C-A-M-n
+	mc    C-A-M-c 
+	mp    C-A-M-p
+	mLeft C-A-M-left
+	mUp   C-A-M-up
+	mDown C-A-M-down
+	mRght C-A-M-rght
+
+  aa å  AA Å
+  ae ä  AE Ä
+  oe ö  OE Ö
+)
+
+(defsrc
+  f1    f2     f3    f4     f5                                                                f6     f7   f8   f11   f12
+        1      2     3      4       5                                                   6     7      8    9    0     
+        q      w     e      r       t                                                   y     u      i    o    p     \
+        a      s     d      f       g                                                   h     j      k    l    ;     '
+  lsft  z      x     c      v       b       tab           lmet     home  del   f10      n     m      ,    .    /     rsft
+        grv    =                            bspc    esc   lctl     end   ret   spc            [      ]    -    pgdn  pgup
+)
+
+(deflayer default
+  f1    f2     f3    f4     f5                                                                f6     f7   f8   f11   f12
+        1      2     3      4       5                                                   6     7      8    9    0     
+        q      w     e      r       t                                                   y     u      i    o    p     \
+        a      s     d      f       g                                                   h     j      k    l    ;     '
+  lsft  z      x     c      v       b       tab           lmet     home  del   @f10     n     m      ,    .    /     rsft
+        grv    =                            bspc    esc   lctl     end   ret   spc            [      ]    -    pgdn  pgup
+)
+
+(deflayer cam-layer
+  f1    f2     f3    f4     f5                                                                f6     f7   f8   f11   f12
+        1      2     3      4       5                                                   6     7      8    9    0     
+        q      @mw   @me    r       t                                                   y     u      i    o    @mp     \
+        a      @ms   @md    @mf     g                                                   h     j      k    l    @oe  @ae
+  lsft  z      x     @mc    v       b       tab           lmet     home  del   @f10     @mn   m      ,    .    /     rsft
+        grv    =                            bspc    esc   lctl     end   ret   spc            @aa    ]    -    pgdn  pgup
+)
+
+;;(deflayer cam-layer
+;;  f1    f2     f3    f4     f5                                                              f6      f7    f8   f11   f12
+;;  =     1      2     3      4         5                                               6     7       8     9    0     -
+;;  tab   q      @mw   @me    r         t                                               y     u       i     o    @mp   \
+;;  esc   a      @ms   @md    @mf       g                                               h     j       k     l    @oe   @ae
+;;  grv   z      x     @mc    v         b   lsft   @f10            rmet        rsft     @mn   m       ,     .    /     pgup
+;;        home   end   @mLeft @mRght        bspc   del   lctl      ralt  ret   spc            @mDown  @mUp  @aa  ]     pgdn
+;;)
+
+;;(deflayer cam-layer
+;;  esc   f1   f2   f3   f4   f5   f6   f7   f8   f9   f10  f11  f12        ssrq   slck   pause
+;;  grv   1    2    3    4    5    6    7    8    9    0    -    =    bspc  ins    home   pgup
+;;  tab   q    @mw  @me  r    t    y    u    i    o    @mp  @aa  ]    ret   del    end    pgdn
+;;  @caps a    @ms  @md  @mf  g    @nh  @nj  @nk  @nl  @oe  @ae  \                        
+;;  lsft  102d z    x    @mc  v    b    @mn  m    ,    .    /    rsft              @mUp       
+;;  lctl  lalt lmet           @mspc               ralt rmet cmp  rctl       @mLeft @mDown @mRght
+;;)
+
+;;(defsrc 
+;;  f1   f2   f3   f4   f5                            f6   f7   f8   f11  f12
+;;  =  1    2    3    4    5    6    7    8    9    0    -    =    bspc  ins  home pgup
+;;  tab  q    w    e    r    t    y    u    i    o    p    [    ]    ret   del  end  pgdn
+;;  esc a    s    d    f    g    h    j    k    l    ;    '    \                        
+;;  grv 102d z    x    c    v    b    n    m    ,    .    /    rsft            up       
+;;  lctl lmet lalt           spc                 ralt rmet cmp  rctl       left down rght
+;;)
+
+;;(deflayer default
+;;  esc   f1   f2   f3   f4   f5   f6   f7   f8   f9   f10  f11  f12        ssrq slck pause
+;;  grv   1    2    3    4    5    6    7    8    9    0    -    =    bspc  ins  home pgup
+;;  tab   q    w    e    r    t    y    u    i    o    p    [    ]    ret   del  end  pgdn
+;;  @caps a    s    d    f    g    h    j    k    l    ;    '    \                        
+;;  lsft  102d z    x    c    v    b    n    m    ,    .    /    rsft            up       
+;;  lctl  lalt lmet           spc                 ralt rmet cmp  rctl       left down rght
+;;)
