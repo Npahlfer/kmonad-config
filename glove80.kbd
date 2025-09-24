@@ -27,21 +27,21 @@
 )
 
 (defsrc
-  f1    f2     f3    f4     f5                                                               f6     f7   f8   f11   f12
-        1      2     3      4       5                                                  6     7      8    9    0     
-        q      w     e      r       t                                                  y     u      i    o    p     \
-        a      s     d      f       g                                                  h     j      k    l    ;     '
-  lsft  z      x     c      v       b      tab           lmet     home  del   f10      n     m      ,    .    /     rsft
-        grv    =                           bspc    esc   lctl     end   ret   spc            [      ]    -    pgdn  pgup
+  f1    f2     f3    f4     f5                                                                f6     f7   f8   f11   f12
+        1      2     3      4       5                                                   6     7      8    9    0     
+        q      w     e      r       t                                                   y     u      i    o    p     \
+        a      s     d      f       g                                                   h     j      k    l    ;     '   
+  lsft  z      x     c      v       b      enter   delete          home  rmet  f10      n     m      ,    .    /     rsft
+        grv    =                           bspc    esc    lctl     end   tab   spc            [      ]    -    pgdn  pgup
 )
 
 (deflayer default
-  f1    f2     f3    f4     f5                                                               f6     f7   f8   f11   f12
-        1      2     3      4       5                                                  6     7      8    9    0     
-        q      w     e      r       t                                                  y     u      i    o    p     \
-        a      s     d      f       g                                                  h     j      k    l    ;     '
-  lsft  z      x     c      v       b      tab           lmet     home  del   @f10     n     m      ,    .    /     rsft
-        grv    =                           bspc    esc   lctl     end   ret   spc            [      ]    -    pgdn  pgup
+  f1    f2     f3    f4     f5                                                                f6     f7   f8   f11   f12
+        1      2     3      4       5                                                   6     7      8    9    0     
+        q      w     e      r       t                                                   y     u      i    o    p     \
+        a      s     d      f       g                                                   h     j      k    l    ;     '   
+  lsft  z      x     c      v       b      enter   delete          home  rmet  @f10     n     m      ,    .    /     rsft
+        grv    =                           bspc    esc    lctl     end   tab   spc            [      ]    -    pgdn  pgup
 )
 
 (deflayer cam-layer
@@ -49,7 +49,7 @@
         1      2     3      4       5                                                  6     7      8    9    0     
         q      @mw   @me    r       t                                                  y     u      i    o    @mp     \
         a      @ms   @md    @mf     g                                                  h     j      k    l    @oe  @ae
-  lsft  z      x     @mc    v       b      tab           lmet     home  del   @f10     @mn   m      ,    .    /     rsft
+  lsft  z      x     @mc    v       b      enter   delete         home  rmet  @f10     @mn   m      ,    .    /     rsft
         grv    =                           bspc    esc   lctl     end   ret   @mspc          @aa    ]    -    pgdn  pgup
 )
 
